@@ -8,5 +8,6 @@
   <description>SpringTutorial</description>
   <modules>
   	<module>SpringCore</module>
+  	<module>Spring-JDBC</module>
   </modules>
 </project>

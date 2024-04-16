@@ -1,4 +1,6 @@
 
 .settings/
 .classpath
+.project
 /SpringCore/target
+/Spring-JDBC/target
