@@ -1,6 +1,7 @@
 package com.spring.jdbc.repository;
 
 import java.util.List;
+import java.util.Map;
 
 import com.spring.jdbc.beans.Student;
 
@@ -8,19 +9,23 @@ public interface StudentDAO {
 
 	public void insert(Student student);
 	
-	public void updateByRollNo(Student student,int rollNo);
+	public int updateByRollNo(Student student,int rollNo);
 	
 	public void insertBatch(List<Student> studentList);
 	
-	public void deleteByRollNo(int rollNo);
+	public void updateBatch(List<Student> studentList);
+	
+	public boolean deleteByRollNo(int rollNo);
 	
 	public void cleanUp();
 	
-	public void displayUsingRowMapper();
+	public List<Student> displayUsingRowMapper();
 	
-	public void displayByRollNoUsingRowMapper(int rollNo);
+	public List<Student> displayByRollNoUsingRowMapper(int rollNo);
 	
-	public void displayUsingBeanPropertyRowMapper();
+	public List<Student> displayUsingBeanPropertyRowMapper();
 	
-	public void displayUsingResultSetExtractor();
+	public List<Student> displayUsingResultSetExtractor();
+	
+	public Map<String, List<String>> displayStudentsGroupByAddress();
 }

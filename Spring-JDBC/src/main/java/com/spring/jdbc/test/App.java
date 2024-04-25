@@ -1,9 +1,8 @@
 package com.spring.jdbc.test;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.spring.jdbc.beans.Student;
+import com.spring.jdbc.helper.StudentDAOHelper;
 import com.spring.jdbc.repository.StudentDAOImpl;
 
 public class App {
@@ -14,17 +13,17 @@ public class App {
 		ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
 		StudentDAOImpl studentDAOImpl = applicationContext.getBean("studentDAO",StudentDAOImpl.class);
 		
-		Student student = new Student();
-		student.setRollNo(0);
-		student.setName("Mahesh");
-		student.setAge(27);
-		student.setAddress("Solapur");	
+//		Student student = new Student();
+//		student.setRollNo(0);
+//		student.setName("Mahesh");
+//		student.setAge(27);
+//		student.setAddress("Solapur");	
 		
 		//Insert Single Row into Table
 //		studentDAOImpl.insert(student);
 		
 		//Update Single Row into Table
-		studentDAOImpl.updateByRollNo(student, 0);
+//		studentDAOImpl.updateByRollNo(student, 0);
 		
 		//Delete the row by using Roll no
 //		studentDAOImpl.deleteByRollNo(1);
@@ -33,6 +32,9 @@ public class App {
 //		StudentDAOHelper helper = new StudentDAOHelper();
 		//Insert Multiple Row into Table
 //		studentDAOImpl.insertBatch(helper.getStudentData());
+		
+		//Update Multiple Row into Table
+//		studentDAOImpl.updateBatch(helper.updateStudentData());
 		
 		//Display All Data from table using RowMapper
 //		studentDAOImpl.displayUsingRowMapper();
@@ -44,7 +46,9 @@ public class App {
 //		studentDAOImpl.displayUsingResultSetExtractor();
 		
 		//Display All Data from table using BeanPropertyRowMapper
-		studentDAOImpl.displayUsingBeanPropertyRowMapper();
+//		studentDAOImpl.displayUsingBeanPropertyRowMapper();
+		
+		studentDAOImpl.displayStudentsGroupByAddress();
 		
 		//Truncate the table - DDL Command
 //		studentDAOImpl.cleanUp();
